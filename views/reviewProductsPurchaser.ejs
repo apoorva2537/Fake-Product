@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<h1>Recived Products</h1>
+<div class="row">
+  <%productData.forEach(function(element){ %>
+    <!-- <form action="/buyProduct" method="POST"> -->
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body" style="text-align:center;">
+          <h5 class="card-title text-white bg-dark" ><%=element.name%></h5>
+          <p class="card-text" name="serialId" >Serial Id:<%=element.serialId%></p>
+          <p class="card-text">Price:<%=element.price%></p>
+          <p class="card-text">Description:<%=element.description%></p>
+          <!-- <button href="/buyProduct/<%=element.serialId%>" type="submit" class="btn btn-dark">Buy</button> -->
+          <a href="/purchaserReview/<%=element.serialId%>">Get Data</a>
+        </div>
+      </div>
+    </div>
+  <!-- </form> -->
+    <%})%>
+</div>
+<%- include('partials/footer') %>
